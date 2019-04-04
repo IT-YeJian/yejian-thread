@@ -14,6 +14,10 @@ import java.util.concurrent.Executors;
  *
  * 好比郊游 先各自从家里出发到公司集合后
  * 再同时出发到公园游玩 在指定地点集合后在同时就餐
+ 应用场景
+CyclicBarrier 适用于多线程结果合并的操作，用于多线程计算数据，最后合并计算结果的应用场景。
+比如，我们需要统计多个 Excel 中的数据，然后等到一个总结果。我们可以通过多线程处理每一个 Excel 
+  ，执行完成后得到相应的结果，最后通过 barrierAction 来计算这些线程的计算结果，得到所有Excel的总和
  * @author YeJian
  * @create 2018-06-01 23:37
  **/
