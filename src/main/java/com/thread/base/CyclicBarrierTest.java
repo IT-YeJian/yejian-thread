@@ -24,7 +24,13 @@ public class CyclicBarrierTest {
         ExecutorService threadPool = Executors.newCachedThreadPool();
 
         //设置三个地点 公司门口  公园   农家乐
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(3,new Runnable() {
+            @Override
+            public void run() {
+                //该操作由最后一个到达屏障的线程执行
+                System.out.println(Thread.currentThread().getName()+" I is last come ");
+            }
+        });
 
         for (int i=0;i<3;i++){
             Runnable runnable= new Runnable() {
