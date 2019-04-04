@@ -31,14 +31,14 @@ public class CyclicBarrierTest {
                 @Override
                 public void run() {
                     try {
-                        Thread.sleep((long)Math.random()* 10000);
+                       Thread.sleep((long)(Math.random()*10000));
                         System.out.println("线程"+Thread.currentThread().getName()+" 到达公司门口"+(cyclicBarrier.getNumberWaiting()==2?"人到齐了 继续走啊":"正在等候"));
                         cyclicBarrier.await();
 
-                        Thread.sleep((long)Math.random()*10000);
+                      Thread.sleep((long)(Math.random()*10000));
                         System.out.println("线程"+Thread.currentThread().getName()+"..到达公园"+(cyclicBarrier.getNumberWaiting()==2?"人到齐了 继续走啊":"正在等候"));
                         cyclicBarrier.await();
-                        Thread.sleep((long)Math.random()*10000);
+                       Thread.sleep((long)(Math.random()*10000));
                         System.out.println("线程"+Thread.currentThread().getName()+"..到达农家乐"+(cyclicBarrier.getNumberWaiting()==2?"人到齐了 继续走啊":"正在等候"));
                         cyclicBarrier.await();
 
