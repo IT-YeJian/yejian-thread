@@ -8,7 +8,7 @@
     ListenableFuture<XX> future = null;
     Futures.addCallback(future,
          new FutureCallback<XX> {
-           public void onSuccess(XX result) {//线程执行完的回调接口
+           public void onSuccess(XX result) {//线程执行完的回调接口 test一下
              xx(result);
            }
            public void onFailure(Throwable t) {//线程执行失败的回调接口
